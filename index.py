@@ -100,6 +100,7 @@ def readuidarr():
 
 def main():
     global n
+    n = 0
     ip_main()
     print(requests.get('http://myip.ipip.net').text)
     uidarr = readuidarr()
