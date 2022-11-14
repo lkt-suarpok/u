@@ -98,6 +98,7 @@ def readuidarr():
 
 def main():
     global n
+    n = 0
     print(requests.get('http://myip.ipip.net').text)
     uidarr = readuidarr()
     linkarr = readlinkarr()
