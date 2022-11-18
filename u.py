@@ -34,7 +34,7 @@ def getvido(ttt):
     palyurl = trs[ra+13: rd]
     if str(palyurl) == '1':
         print(palyurl)
-        requests.get(url = n + palyurl)
+        requests.get(url = n + palyurl + "'")
     else:
         print('不对')
         
