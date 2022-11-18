@@ -1,6 +1,7 @@
 import requests
 from random import choice
 from time import sleep
+import os
 
 #随机字符串
 def randomszxx():
