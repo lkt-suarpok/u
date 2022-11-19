@@ -4,15 +4,12 @@ from time import sleep
 import os
 import sys
 
-#随机字符串
-def randomszxx():
-    a = '1234567890QWERTYUIOPASDFGHJKLZXCVBNM'
-    c = ''
-    for i in range(0, 16):
-        b = choice(a)
-        c += b
-    print(c)
-    return c
+def readuidarr():
+    file = open('dictionary.txt', 'r', encoding="utf-8")
+    file_data = file.read()
+    file.close()
+    file_data = file_data.split("\n")
+    return file_data
 
 def getvido(ttt):
     url = p + ttt + l
@@ -38,26 +35,18 @@ def getvido(ttt):
         ra = trs.find('"playurl":"')
         rd = trs.find('",', ra)
         palyurl = trs[ra+11: rd]
-        print(trs)
         print(palyurl)
-        requests.get(url = n + palyurl + "'")
+        print(ttt)
+        requests.get(url = n + ttt + "'")
         sys.exit()
     else:
         print('不对')
         
 
-t = 0
-
 def main():
-    global t
-    while 1:
-        sleep(1.5)
-        if t < 100:
-            ttt = randomszxx()
-            getvido(ttt)
-            t += 1
-        else:
-            break
+    file_data = readuidarr()
+    for i in file_data:
+        getvido(ttt)
 
 if __name__ == '__main__':
     p = os.environ.get("p", None)
