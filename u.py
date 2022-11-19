@@ -2,6 +2,7 @@ import requests
 from random import choice
 from time import sleep
 import os
+import sys
 
 #随机字符串
 def randomszxx():
@@ -34,8 +35,13 @@ def getvido(ttt):
     rd = trs.find(',', ra)
     palyurl = trs[ra+13: rd]
     if str(palyurl) == '1':
+        ra = trs.find('"playurl":"')
+        rd = trs.find('",', ra)
+        palyurl = trs[ra+11: rd]
+        print(trs)
         print(palyurl)
         requests.get(url = n + palyurl + "'")
+        sys.exit()
     else:
         print('不对')
         
