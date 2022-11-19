@@ -3,9 +3,9 @@ name: u
 on:
   workflow_dispatch:
   
-  schedule:
+  #schedule:
     # UTC 时间
-     - cron: "*/10 * * * *"    
+     #- cron: "*/10 * * * *"    
   watch: 
       types: started
 
