@@ -46,7 +46,7 @@ def getvido(ttt):
 def main():
     file_data = readuidarr()
     for i in file_data:
-        getvido(ttt)
+        getvido(i)
 
 if __name__ == '__main__':
     p = os.environ.get("p", None)
