@@ -5,7 +5,7 @@ on:
   
   schedule:
     # UTC 时间
-     - cron: "0,30 0-16 * * *"    
+     - cron: "0,20,40 0-16 * * *"    
   watch: 
       types: started
 
